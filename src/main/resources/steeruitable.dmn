@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="steerUITable" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Web Modeler" exporterVersion="bf9e49e" camunda:diagramRelationId="b5a68cf5-0c90-46af-b475-ddd0f5ec6740" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
+  <decision id="Decision_1eykg0e" name="Decision 1">
+    <decisionTable id="DecisionTable_1g8kckm">
+      <input id="Input_1" label="Request Amount">
+        <inputExpression id="InputExpression_1" typeRef="number">
+          <text>requestAmount</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="next page" name="nextPage" typeRef="string" />
+      <rule id="DecisionRule_0gndpnq">
+        <inputEntry id="UnaryTests_0n1n6yt">
+          <text>&lt;=2000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10a788p">
+          <text>"page2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02r0uxo">
+        <inputEntry id="UnaryTests_15ng336">
+          <text>&gt;2000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vryfip">
+          <text>"page3"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_1eykg0e">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
